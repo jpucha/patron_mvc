@@ -9,8 +9,6 @@ import com.ec.itss.conexion.ConexionMySql;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 /**
  *
@@ -23,11 +21,12 @@ public class RegistroProducto {
     
     public void registrar(Producto p){
         try {
-            PreparedStatement ps = con.prepareStatement("INSERT INTO Producto(nombre, cantidad, precio, total) VALUES (?,?,?,?)");
+            PreparedStatement ps = con.prepareStatement("INSERT INTO Producto(nombre, cantidad, precio, total, idCategoria) VALUES (?,?,?,?,?)");
             ps.setString(1,p.getNombre());
             ps.setInt(2,p.getCantidad());
             ps.setDouble(3,p.getPrecio());
             ps.setDouble(4,p.calcularTotal());
+            ps.setDouble(5,p.getIdCategoria());
             
             ps.executeUpdate();
         } catch (SQLException ex) {

@@ -33,8 +33,9 @@ public class Frm_RegistrarProducto_Controlador implements ActionListener{
             String nombre = frm_rp.txtNombre.getText();
             Integer cantidad = Integer.parseInt(frm_rp.txtCantidad.getText());
             Double precio = Double.parseDouble(frm_rp.txtPrecio.getText());
+            Integer idCategoria = frm_rp.jComboBoxCategoria.getItemAt(frm_rp.jComboBoxCategoria.getSelectedIndex()).getIdCategoria();
             
-            Producto producto = new Producto(nombre, cantidad, precio);
+            Producto producto = new Producto(nombre, cantidad, precio, idCategoria);
             RegistroProducto registro = new RegistroProducto();
             registro.registrar(producto);
             

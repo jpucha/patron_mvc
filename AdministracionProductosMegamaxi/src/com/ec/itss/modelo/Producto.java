@@ -15,14 +15,17 @@ public class Producto {
     
     private Integer cantidad;
     
-    private double precio;
+    private Double precio;
     
-    private double total;
+    private Double total;
+    
+    private Integer idCategoria;
 
-    public Producto(String nombre, Integer cantidad, double precio) {
+    public Producto(String nombre, Integer cantidad, Double precio, Integer idCategoria) {
         this.nombre = nombre;
         this.cantidad = cantidad;
         this.precio = precio;
+        this.idCategoria = idCategoria;
     }
 
     public String getNombre() {
@@ -41,23 +44,32 @@ public class Producto {
         this.cantidad = cantidad;
     }
 
-    public double getPrecio() {
+    public Double getPrecio() {
         return precio;
     }
 
-    public void setPrecio(double precio) {
+    public void setPrecio(Double precio) {
         this.precio = precio;
     }
 
-    public double getTotal() {
+    public Double getTotal() {
         return total;
     }
 
-    public void setTotal(double total) {
+    public void setTotal(Double total) {
         this.total = total;
     }
     
-    public double calcularTotal(){
+    public Double calcularTotal(){
         return cantidad*precio;
     }
+
+    public Integer getIdCategoria() {
+        return idCategoria;
+    }
+
+    public void setIdCategoria(Integer idCategoria) {
+        this.idCategoria = idCategoria;
+    }
+    
 }

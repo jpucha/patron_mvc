@@ -22,11 +22,11 @@ public class ListarProducto {
     
     public void mostrarTabla(JTable tabla){
         DefaultTableModel modelo = new DefaultTableModel();
-        modelo.addColumn("idProducto");
-        modelo.addColumn("nombre");
-        modelo.addColumn("cantidad");
-        modelo.addColumn("precio");
-        modelo.addColumn("total");
+        modelo.addColumn("Identificador");
+        modelo.addColumn("Nombre");
+        modelo.addColumn("Cantidad existencia");
+        modelo.addColumn("Precio");
+        modelo.addColumn("Total");
         
         String query = "SELECT * FROM Producto";
         Statement st;
